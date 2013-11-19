@@ -1,6 +1,6 @@
 {
   "name": "express-abstracted-authentication",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Abstracted multi-step authentication flows for express",
   "main": "index.js",
   "repository": {
