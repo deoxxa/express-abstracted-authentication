@@ -1,8 +1,25 @@
-var http_error = require("http-error"),
-    express = require("express");
+var async = require("async"),
+    express = require("express"),
+    http_error = require("http-error");
 
 var createApp = exports.createApp = function createApp(options) {
   options = options || {};
+
+  var passports = options.passports;
+
+  var oldCreateInstance = passports._createInstance;
+
+  passports._createInstance = function _createInstance(options, cb) {
+    return oldCreateInstance.call(passports, options, function(err, instance) {
+      return async.applyEach(passports._createInstanceHandlers || [], instance, options, function(err) {
+        if (err) {
+          return cb(err);
+        }
+
+        return cb(null, instance);
+      });
+    });
+  };
 
   var app = express();
 
