@@ -1,0 +1,21 @@
+{
+  "name": "express-abstracted-authentication",
+  "version": "0.0.0",
+  "description": "Abstracted multi-step authentication flows for express",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deoxxa/express-abstracted-authentication.git"
+  },
+  "author": "Conrad Pankoff <deoxxa@fknsrs.biz> (http://www.fknsrs.biz/)",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/deoxxa/express-abstracted-authentication/issues"
+  },
+  "dependencies": {
+    "http-error": "0.0.1"
+  },
+  "peerDependencies": {
+    "express": "^3.0.0"
+  }
+}
